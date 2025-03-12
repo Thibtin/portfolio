@@ -57,37 +57,44 @@ nav ul li a:hover {
     color: #ff4757;
 }
 
-/* Section Hero */
-#hero {
+/* Section acceuil */
+#acceuil {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     height: 100vh;
-    text-align: left;
-    padding: 20px;
+    text-align: center;
+    padding: 10px;
+    margin-left: 200px;
 }
 
-.hero-text {
-    max-width: 50%;
+.acceuil-text {
+    max-width: 70%;
 }
 
-.hero-text h1 {
+.acceuil-text h1 {
     font-size: 3em;
 }
 
-.hero-text span {
+.acceuil-text h3 {
     color: #ff4757;
+    font-size: 6em;
 }
 
-.hero-text h2 {
+.acceuil-text h2 {
     font-size: 1.5em;
     opacity: 0.8;
+}
+
+.corps-text h1 {
+    color: #ff4757;
 }
 
 /* Boutons */
 .btn {
     display: inline-block;
     padding: 15px 30px;
+    margin-top: 20px;
     background: #ff4757;
     color: white;
     text-decoration: none;
@@ -113,6 +120,7 @@ h1 {
 
 /* Pied de page */
 footer {
+    margin-top: -70px;
     background: #111;
     padding: 20px;
     text-align: center;
@@ -134,12 +142,12 @@ footer {
         margin: 10px 0;
     }
 
-    #hero {
+    #acceuil {
         flex-direction: column;
         text-align: center;
     }
 
-    .hero-text {
+    .acceuil-text {
         max-width: 80%;
     }
 
