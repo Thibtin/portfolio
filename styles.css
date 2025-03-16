@@ -305,13 +305,91 @@ footer {
 
 /* Carousel */
 .carousel {
-    display: flex;
+    position: relative;
+    width: 400px; /* Ajuste selon besoin */
+    height: 250px;
     overflow: hidden;
-    width: 80%;
-    height: 60%;
+    border-radius: 10px;
+}
+/* Style des images du carousel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    overflow: hidden;
 }
 
-.carousel img {
+.carousel-item {
     width: 100%;
-    object-fit: cover;
+    height: auto;
+    display: none; /* Cache toutes les images sauf l'active */
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+/* Boutons du carousel */
+#prev, #next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#prev {
+    left: 10px;
+}
+
+#next {
+    right: 10px;
+}
+
+/* Empêche le fullscreen de s'afficher sur hover */
+#fullscreen-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#fullscreen-container.show {
+    display: flex;
+}
+
+#fullscreen-container img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+#close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Effet zoom au survol */
+.clickable-image {
+    width: 100px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.clickable-image:hover {
+    transform: scale(1.1);
 }

@@ -29,37 +29,100 @@
     <div class="container">
         <div class="project">
             <div class="project-content">
-                <img src="/img/schotten_totten.png" alt="Projet" class="project-image">
+                <img src="/img/schotten_totten/acceuil.jpg" alt="Projet" class="project-image">
                 <h3>Schotten Totten</h3>
                 <p>Jeu de cartes et de stratégie pour deux joueurs avec l'implémentation d'une IA</p>
             </div>
             <div class="project-details">
                 <p>Voici une description plus détaillée du projet...</p>
                 <div class="carousel">
-                    <img src="image1.jpg" alt="Image 1">
-                    <img src="image2.jpg" alt="Image 2">
-                    <img src="image3.jpg" alt="Image 3">
+                    <div class="carousel-container">
+                        <script>
+                            function openFullscreen(img) {
+                                const fullscreenContainer = document.getElementById("fullscreen-container");
+                                const fullscreenImg = document.getElementById("fullscreen-img");
+
+                                fullscreenImg.src = img.src;
+                                fullscreenContainer.classList.add("show");
+                            }
+                        </script>
+                        <img src="/img/schotten_totten/menu.jpg" class="carousel-item active" onclick="openFullscreen(this)">
+                        <img src="/img/schotten_totten/jeu.jpg" class="carousel-item" onclick="openFullscreen(this)">
+                        <img src="/img/schotten_totten/machine_etat.jpg" class="carousel-item" onclick="openFullscreen(this)">
+                        <img src="/img/schotten_totten/action_ia.jpg" class="carousel-item" onclick="openFullscreen(this)">
+                    </div>
+
+                    <!-- Fenêtre d'affichage en plein écran -->
+                    <div id="fullscreen-container" class="hidden">
+                        <span id="close">&times;</span>
+                        <img id="fullscreen-img" src="">
+                    </div>
+
+                    <button id="prev">❮</button>
+                    <button id="next">❯</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <script>
-        let images = document.querySelectorAll('.carousel img');
-        let index = 0;
-
-        function changeImage() {
-            images[index].style.opacity = 0;
-            index = (index + 1) % images.length;
-            images[index].style.opacity = 1;
-        }
-
-        setInterval(changeImage, 2000);
-    </script>
-
     <footer>
         <p>&copy; 2025 Mon Portfolio - Tous droits réservés.</p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let currentIndex = 0;
+            const items = document.querySelectorAll(".carousel-item");
+            const totalItems = items.length;
+            const intervalTime = 3000; // Temps entre chaque image (3 sec)
+            let autoSlide = setInterval(nextSlide, intervalTime);
+
+            function showSlide(index) {
+                items.forEach((item, i) => {
+                    item.classList.remove("active");
+                    item.style.display = i === index ? "block" : "none"; // Affiche uniquement l'image active
+                });
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % totalItems;
+                showSlide(currentIndex);
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+                showSlide(currentIndex);
+            }
+
+            document.getElementById("next").addEventListener("click", () => {
+                clearInterval(autoSlide);
+                nextSlide();
+                autoSlide = setInterval(nextSlide, intervalTime);
+            });
+
+            document.getElementById("prev").addEventListener("click", () => {
+                clearInterval(autoSlide);
+                prevSlide();
+                autoSlide = setInterval(nextSlide, intervalTime);
+            });
+
+            // Fonction pour afficher l'image en plein écran
+
+            // Ferme l'image en cliquant sur la croix
+            document.getElementById("close").addEventListener("click", () => {
+                document.getElementById("fullscreen-container").classList.remove("show");
+            });
+
+            // Ferme aussi l'image en cliquant en dehors
+            document.getElementById("fullscreen-container").addEventListener("click", (e) => {
+                if (e.target === document.getElementById("fullscreen-container")) {
+                    document.getElementById("fullscreen-container").classList.remove("show");
+                }
+            });
+
+            // Initialiser le carousel pour afficher la première image
+            showSlide(currentIndex);
+        });
+    </script>
 </body>
 </html>
-
