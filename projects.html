@@ -34,7 +34,15 @@
                 <p>Jeu de cartes et de stratégie pour deux joueurs avec l'implémentation d'une IA</p>
             </div>
             <div class="project-details">
-                <p>Voici une description plus détaillée du projet...</p>
+                <h3>Schotten Totten</h3>
+                <p class="description">Ce projet vise à créer une version numérique d’un jeu de cartes avec une intelligence
+                    artificielle capable de rivaliser avec un joueur humain. L’objectif était de modéliser
+                    fidèlement les règles, développer une IA stratégique avec Q-Learning et concevoir une
+                    interface intuitive avec Pygame pour une expérience fluide. On a rencontré plusieurs défis,
+                    comme la gestion du temps et la complexité des algorithmes, mais l’IA progresse en apprenant
+                    de ses erreurs. Bien que le jeu soit fonctionnel, il reste des améliorations à apporter,
+                    notamment sur l’optimisation des performances et l’affinement des stratégies de
+                    l’IA.</p>
                 <div class="carousel">
                     <div class="carousel-container">
                         <script>
@@ -50,6 +58,17 @@
                         <img src="/img/schotten_totten/jeu.jpg" class="carousel-item" onclick="openFullscreen(this)">
                         <img src="/img/schotten_totten/machine_etat.jpg" class="carousel-item" onclick="openFullscreen(this)">
                         <img src="/img/schotten_totten/action_ia.jpg" class="carousel-item" onclick="openFullscreen(this)">
+
+                        <button id="prev">❮</button>
+                        <button id="next">❯</button>
+                    </div>
+
+                    <div class="carousel-indicators">
+                        <h3>Images</h3>
+                        <p class="carousel-text active">Image 1 : Menu</p>
+                        <p class="carousel-text">Image 2 : Interface de jeu</p>
+                        <p class="carousel-text">Image 3 : Machine à états</p>
+                        <p class="carousel-text">Image 4 : Action de l'IA</p>
                     </div>
 
                     <!-- Fenêtre d'affichage en plein écran -->
@@ -57,9 +76,6 @@
                         <span id="close">&times;</span>
                         <img id="fullscreen-img" src="">
                     </div>
-
-                    <button id="prev">❮</button>
-                    <button id="next">❯</button>
                 </div>
             </div>
         </div>
@@ -73,6 +89,7 @@
         document.addEventListener("DOMContentLoaded", function () {
             let currentIndex = 0;
             const items = document.querySelectorAll(".carousel-item");
+            const indicators = document.querySelectorAll(".carousel-text");
             const totalItems = items.length;
             const intervalTime = 3000; // Temps entre chaque image (3 sec)
             let autoSlide = setInterval(nextSlide, intervalTime);
@@ -81,6 +98,13 @@
                 items.forEach((item, i) => {
                     item.classList.remove("active");
                     item.style.display = i === index ? "block" : "none"; // Affiche uniquement l'image active
+                });
+
+                indicators.forEach((indicator, i) => {
+                    indicator.classList.remove("active");
+                    if (i === index) {
+                        indicator.classList.add("active");
+                    }
                 });
             }
 
@@ -106,14 +130,18 @@
                 autoSlide = setInterval(nextSlide, intervalTime);
             });
 
-            // Fonction pour afficher l'image en plein écran
+            function openFullscreen(img) {
+                const fullscreenContainer = document.getElementById("fullscreen-container");
+                const fullscreenImg = document.getElementById("fullscreen-img");
 
-            // Ferme l'image en cliquant sur la croix
+                fullscreenImg.src = img.src;
+                fullscreenContainer.classList.add("show");
+            }
+
             document.getElementById("close").addEventListener("click", () => {
                 document.getElementById("fullscreen-container").classList.remove("show");
             });
 
-            // Ferme aussi l'image en cliquant en dehors
             document.getElementById("fullscreen-container").addEventListener("click", (e) => {
                 if (e.target === document.getElementById("fullscreen-container")) {
                     document.getElementById("fullscreen-container").classList.remove("show");
