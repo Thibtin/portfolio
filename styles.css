@@ -241,14 +241,19 @@ footer {
 }
 
 .project {
-    position: relative;
-    width: 400px; /* Taille initiale */
-    height: 250px;
-    overflow: hidden;
-    border-radius: 10px;
-    transition: all 0.3s ease-in-out;
     background: rgba(89, 89, 89, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    height: 250px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .project:hover {
@@ -258,16 +263,13 @@ footer {
 
 /* Contenu par défaut */
 .project-content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    transition: opacity 0.3s;
+    justify-content: center;
+    gap: 10px;
 }
+
 
 .project:hover .project-content {
     opacity: 0;
@@ -275,11 +277,43 @@ footer {
 
 /* Image au repos */
 .project-image {
+    position: absolute;
+    top: 30px;
+    left: 20px;
     width: 100px;
     height: 100px;
-    margin-bottom: 10px;
-    border-radius: 20px;
-    margin-right: 20px;
+    border-radius: 10px;
+}
+
+.project-title {
+    position: absolute;
+    top: 75px;
+    left: 150px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+    text-align: left;
+}
+
+.project-text {
+    text-align: center;
+    position: absolute;
+    top: 150px;
+}
+
+.project-text p {
+    font-size: 14px;
+    color: #ddd;
+    margin: 5px 0;
+}
+
+.project-text h4 {
+    font-size: 14px;
+    font-style: italic;
+    text-decoration: underline;
+    color: rgba(129, 129, 129, 0.9);
+    margin-top: 10px;
 }
 
 /* Overlay avec le texte et le carousel */
