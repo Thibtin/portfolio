@@ -7,101 +7,200 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">🚀</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a href="projects.html">Projets</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <div class="logo">🚀</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="projects.html">Projets</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <section id="corps-projects">
-        <div class="corps-text">
-            <h1>Mes Projets</h1>
-            <p>Voici quelques-uns de mes projets réalisés au cours de mes études.</p>
-        </div>
-    </section>
+<section id="corps-projects">
+    <div class="corps-text">
+        <h1>Mes Projets</h1>
+        <p>Voici quelques-uns de mes projets réalisés au cours de mes études.</p>
+    </div>
+</section>
 
-    <div class="container">
-        <div class="project">
-            <div class="project-content">
-                <img src="/img/schotten_totten/acceuil.jpg" alt="Projet" class="project-image">
-                <h3 class="project-title">Schotten Totten</h3>
-                <div class="project-text">
-                    <p>Jeu de cartes et de stratégie pour deux joueurs avec l'implémentation d'une IA</p>
-                    <h4>Langage : python</h4>
-                </div>
+<div class="container">
 
+    <script>
+        function openFullscreen(img) {
+            const fullscreenContainer = document.getElementById("fullscreen-container");
+            const fullscreenImg = document.getElementById("fullscreen-img");
+
+            fullscreenImg.src = img.src;
+            fullscreenContainer.classList.add("show");
+        }
+    </script>
+
+    <!-- Projet 1 -->
+    <div class="project">
+        <div class="project-content">
+            <img src="/img/schotten_totten/acceuil.jpg" alt="Projet 1" class="project-image">
+            <h3 class="project-title">Schotten Totten</h3>
+            <div class="project-text">
+                <p>Jeu de cartes et de stratégie pour deux joueurs avec l'implémentation d'une IA</p>
+                <h4>Langage : Python</h4>
             </div>
-            <div class="project-details">
-                <h3>Schotten Totten</h3>
-                <p class="description">Ce projet vise à créer une version numérique d’un jeu de cartes avec une intelligence
-                    artificielle capable de rivaliser avec un joueur humain. L’objectif était de modéliser
-                    fidèlement les règles, développer une IA stratégique avec Q-Learning et concevoir une
-                    interface intuitive avec Pygame pour une expérience fluide. On a rencontré plusieurs défis,
-                    comme la gestion du temps et la complexité des algorithmes, mais l’IA progresse en apprenant
-                    de ses erreurs. Bien que le jeu soit fonctionnel, il reste des améliorations à apporter,
-                    notamment sur l’optimisation des performances et l’affinement des stratégies de
-                    l’IA.</p>
-                <div class="carousel">
-                    <div class="carousel-container">
-                        <script>
-                            function openFullscreen(img) {
-                                const fullscreenContainer = document.getElementById("fullscreen-container");
-                                const fullscreenImg = document.getElementById("fullscreen-img");
+        </div>
+        <div class="project-details">
+            <h3>Schotten Totten</h3>
+            <p class="description">Ce projet vise à créer une version numérique d’un jeu de cartes avec une intelligence
+                artificielle capable de rivaliser avec un joueur humain. L’objectif était de modéliser
+                fidèlement les règles, développer une IA stratégique avec Deep-Learning et concevoir une
+                interface intuitive avec Pygame pour une expérience fluide. On a rencontré plusieurs défis,
+                comme la gestion du temps et la complexité des algorithmes, mais l’IA progresse en apprenant
+                de ses erreurs. Bien que le jeu soit fonctionnel, il reste des améliorations à apporter,
+                notamment sur l’optimisation des performances et l’affinement des stratégies de
+                l’IA.</p>
+            <div class="carousel">
+                <div class="carousel-container">
+                    <img src="/img/schotten_totten/menu.jpg" class="carousel-item active" onclick="openFullscreen(this)">
+                    <img src="/img/schotten_totten/jeu.jpg" class="carousel-item" onclick="openFullscreen(this)">
+                    <img src="/img/schotten_totten/machine_etat.jpg" class="carousel-item" onclick="openFullscreen(this)">
+                    <img src="/img/schotten_totten/action_ia.jpg" class="carousel-item" onclick="openFullscreen(this)">
 
-                                fullscreenImg.src = img.src;
-                                fullscreenContainer.classList.add("show");
-                            }
-                        </script>
-                        <img src="/img/schotten_totten/menu.jpg" class="carousel-item active" onclick="openFullscreen(this)">
-                        <img src="/img/schotten_totten/jeu.jpg" class="carousel-item" onclick="openFullscreen(this)">
-                        <img src="/img/schotten_totten/machine_etat.jpg" class="carousel-item" onclick="openFullscreen(this)">
-                        <img src="/img/schotten_totten/action_ia.jpg" class="carousel-item" onclick="openFullscreen(this)">
-
-                        <button id="prev">❮</button>
-                        <button id="next">❯</button>
-                    </div>
-
-                    <div class="carousel-indicators">
-                        <h3>Images</h3>
-                        <p class="carousel-text active">Image 1 : Menu</p>
-                        <p class="carousel-text">Image 2 : Interface de jeu</p>
-                        <p class="carousel-text">Image 3 : Machine à états</p>
-                        <p class="carousel-text">Image 4 : Action de l'IA</p>
-                    </div>
-
-                    <!-- Fenêtre d'affichage en plein écran -->
-                    <div id="fullscreen-container" class="hidden">
-                        <span id="close">&times;</span>
-                        <img id="fullscreen-img" src="">
-                    </div>
+                    <button class="prev">❮</button>
+                    <button class="next">❯</button>
                 </div>
+
+                <div class="carousel-indicators">
+                    <h3>Images</h3>
+                    <p class="carousel-text active">Image du menu de jeu</p>
+                    <p class="carousel-text">Image de l'interface de jeu</p>
+                    <p class="carousel-text">Graphique machine à états du jeu</p>
+                    <p class="carousel-text">Code gérant l'action de l'IA</p>
+                </div>
+
             </div>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2025 Mon Portfolio - Tous droits réservés.</p>
-    </footer>
+    <!-- Projet 2 -->
+    <div class="project">
+        <div class="project-content">
+            <img src="/img/simulateur_iot/Iot.jpg" alt="Projet 2" class="project-image">
+            <h3 class="project-title">Simulateur IoT - Qualité de l'air</h3>
+            <div class="project-text">
+                <p>Surveillance environnementale avec des capteurs</p>
+                <h4>Langage : C++</h4>
+            </div>
+        </div>
+        <div class="project-details">
+            <h3>Simulateur IoT</h3>
+            <p class="description">Ce projet consiste à développer un simulateur IoT en C++, destiné au suivi en temps réel des
+                paramètres environnementaux tels que la température, le son, la lumière et l'humidité dans
+                un environnement de travail. L’application utilise des concepts clés de la programmation
+                orientée objet comme l’héritage, le polymorphisme et l’abstraction, pour générer, envoyer et
+                stocker des données issues de différents capteurs dans des fichiers CSV.</p>
+            <div class="carousel">
+                <div class="carousel-container">
+                    <img src="/img/simulateur_iot/UML.jpg" class="carousel-item active" onclick="openFullscreen(this)">
+                    <img src="/img/simulateur_iot/CSV.jpg" class="carousel-item" onclick="openFullscreen(this)">
+                    <img src="/img/simulateur_iot/console.jpg" class="carousel-item" onclick="openFullscreen(this)">
+                    <button class="prev">❮</button>
+                    <button class="next">❯</button>
+                </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let currentIndex = 0;
-            const items = document.querySelectorAll(".carousel-item");
-            const indicators = document.querySelectorAll(".carousel-text");
+                <div class="carousel-indicators">
+                    <h3>Images</h3>
+                    <p class="carousel-text active">Diagramme UML du projet</p>
+                    <p class="carousel-text">Image du fichier de stockage</p>
+                    <p class="carousel-text">Image des données récupérées</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Projet 3 -->
+    <div class="project">
+        <div class="project-content">
+            <img src="/img/turing_machine/logo.jpg" alt="Projet 3" class="project-image">
+            <h3 class="project-title">Turing Machine</h3>
+            <div class="project-text">
+                <p>Un jeu de réflexion basé sur la logique</p>
+                <h4>Langage : Java</h4>
+            </div>
+        </div>
+        <div class="project-details">
+            <h3>Turing Machine</h3>
+            <p class="description">Ce projet consiste à développer une version numérique du jeu "Turing Machine", un jeu de
+            logique et de déduction, en l’adaptant à un contexte universitaire. L’objectif était de
+            modéliser les règles du jeu, concevoir une interface intuitive en Java et implémenter un
+            système de vérification logique permettant de deviner une salle de cours à partir d’indices.
+            L’équipe a dû relever plusieurs défis, notamment la gestion de l’interface et l’intégration
+            des différentes classes. Bien que le projet soit fonctionnel, des améliorations restent
+            possibles sur l’optimisation du code et l’ergonomie de l’application.</p>
+            <div class="carousel">
+                <div class="carousel-container">
+                    <img src="/img/turing_machine/jeu.jpg" class="carousel-item active" onclick="openFullscreen(this)">
+                    <img src="/img/turing_machine/menu.jpg" class="carousel-item" onclick="openFullscreen(this)">
+                    <img src="/img/turing_machine/DiagrammeCasUtilisation.jpg" class="carousel-item" onclick="openFullscreen(this)">
+                    <img src="/img/turing_machine/DiagrammeClasse.jpg" class="carousel-item" onclick="openFullscreen(this)">
+                    <img src="/img/turing_machine/DiagrammeSéquence.jpg" class="carousel-item" onclick="openFullscreen(this)">
+                    <button class="prev">❮</button>
+                    <button class="next">❯</button>
+                </div>
+
+                <div class="carousel-indicators">
+                    <h3>Images</h3>
+                    <p class="carousel-text active">Image du jeu</p>
+                    <p class="carousel-text">Image du menu de jeu</p>
+                    <p class="carousel-text">Diagramme cas d'utilisation du projet</p>
+                    <p class="carousel-text">Diagramme de classe du projet</p>
+                    <p class="carousel-text">Diagramme de sequence du projet</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Mon Portfolio - Tous droits réservés.</p>
+</footer>
+
+<!-- Fenêtre d'affichage en plein écran -->
+<div id="fullscreen-container" class="hidden">
+    <span id="close">&times;</span>
+    <img id="fullscreen-img" src="">
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        document.getElementById("close").addEventListener("click", () => {
+            document.getElementById("fullscreen-container").classList.remove("show");
+        });
+
+        document.getElementById("fullscreen-container").addEventListener("click", (e) => {
+            if (e.target === document.getElementById("fullscreen-container")) {
+                document.getElementById("fullscreen-container").classList.remove("show");
+            }
+        });
+
+        const carousels = document.querySelectorAll(".carousel-container");
+
+        carousels.forEach(carousel => {
+            const items = carousel.querySelectorAll(".carousel-item");
+            const indicators = carousel.nextElementSibling.querySelectorAll(".carousel-text");
             const totalItems = items.length;
-            const intervalTime = 3000; // Temps entre chaque image (3 sec)
-            let autoSlide = setInterval(nextSlide, intervalTime);
+            const nextBtn = carousel.querySelector(".next");
+            const prevBtn = carousel.querySelector(".prev");
+
+            let currentIndex = 0;
+            let autoSlide;
 
             function showSlide(index) {
                 items.forEach((item, i) => {
                     item.classList.remove("active");
-                    item.style.display = i === index ? "block" : "none"; // Affiche uniquement l'image active
+                    item.style.display = i === index ? "block" : "none";
                 });
 
                 indicators.forEach((indicator, i) => {
@@ -122,39 +221,34 @@
                 showSlide(currentIndex);
             }
 
-            document.getElementById("next").addEventListener("click", () => {
-                clearInterval(autoSlide);
-                nextSlide();
-                autoSlide = setInterval(nextSlide, intervalTime);
-            });
-
-            document.getElementById("prev").addEventListener("click", () => {
-                clearInterval(autoSlide);
-                prevSlide();
-                autoSlide = setInterval(nextSlide, intervalTime);
-            });
-
-            function openFullscreen(img) {
-                const fullscreenContainer = document.getElementById("fullscreen-container");
-                const fullscreenImg = document.getElementById("fullscreen-img");
-
-                fullscreenImg.src = img.src;
-                fullscreenContainer.classList.add("show");
+            function startAutoSlide() {
+                autoSlide = setInterval(nextSlide, 3000); // Défilement toutes les 3 secondes
             }
 
-            document.getElementById("close").addEventListener("click", () => {
-                document.getElementById("fullscreen-container").classList.remove("show");
-            });
+            function stopAutoSlide() {
+                clearInterval(autoSlide);
+            }
 
-            document.getElementById("fullscreen-container").addEventListener("click", (e) => {
-                if (e.target === document.getElementById("fullscreen-container")) {
-                    document.getElementById("fullscreen-container").classList.remove("show");
-                }
-            });
+            if (nextBtn && prevBtn) {
+                nextBtn.addEventListener("click", () => {
+                    stopAutoSlide();
+                    nextSlide();
+                    startAutoSlide();
+                });
 
-            // Initialiser le carousel pour afficher la première image
+                prevBtn.addEventListener("click", () => {
+                    stopAutoSlide();
+                    prevSlide();
+                    startAutoSlide();
+                });
+            }
+
+            // Démarrer l'auto-défilement au chargement
             showSlide(currentIndex);
+            startAutoSlide();
         });
-    </script>
+    });
+</script>
+
 </body>
 </html>

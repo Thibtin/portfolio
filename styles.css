@@ -393,7 +393,7 @@ footer {
 }
 
 /* Boutons du carousel */
-#prev, #next {
+.prev, .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -405,11 +405,11 @@ footer {
     z-index: 10;
 }
 
-#prev {
+.prev {
     left: 10px;
 }
 
-#next {
+.next {
     right: 10px;
 }
 
