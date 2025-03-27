@@ -172,8 +172,15 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
+}
 
-
+#footer_projects{
+    background: #111;
+    padding: 20px;
+    text-align: center;
+    position: absolute;
+    top: 1800px;
+    width: 100%;
 }
 
 /* Responsive */
@@ -235,31 +242,53 @@ footer {
 
 .container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    height: 25vh; /* Prend toute la hauteur de l'écran */
+    position: relative;
+    width: 80%;
+    max-width: calc(100% - 100px);
+    margin: 0 auto;
 }
 
 .project {
+    width: 100%;
+    height: 100%;
     background: rgba(89, 89, 89, 0.9);
-    padding: 20px;
-    border-radius: 10px;
-    width: 400px;
-    height: 250px;
-    text-align: center;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    position: relative;
-    overflow: hidden;
+    border-radius: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.projet-wrapper {
+    position: relative;
+    width: 400px;
+    height: 250px;
+    transition: all 0.3s ease;
+    margin: 10px;
 }
 
 .project:hover {
-    width: 800px; /* Double la taille */
+    position: absolute;
+    width: 800px;
     height: 600px;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.projet:hover .project-details {
+    display: block;
 }
 
 /* Contenu par défaut */
