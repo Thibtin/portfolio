@@ -11,10 +11,19 @@
 /* Style général */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #0d0d0d;
+    background: #141432;
     color: #ffffff;
     text-align: center;
     line-height: 1.6;
+}
+
+#body-projects{
+    background-color: #141432;
+    padding: 60px 40px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
 }
 
 /* Barre de navigation */
@@ -23,17 +32,28 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background: #111;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
 }
 
-.logo {
+.titre {
+    display: flex;
     font-size: 1.5em;
-    font-weight: bold;
     color: white;
+}
+
+.color-dot {
+    background-color: #141432;
+    display: flex;
+    margin-right: 10px;
+    margin-top: 5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
 }
 
 nav ul {
@@ -54,18 +74,22 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ff4757;
+    color: #141432;
+}
+
+nav ul li a.active {
+    color: #141432;
 }
 
 /* Section acceuil */
 #acceuil {
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: center;
     height: 100vh;
+    color: white;
+    padding: 100px 40px;
     text-align: center;
-    padding: 10px;
-    margin-left: 200px;
 }
 
 .acceuil-text {
@@ -73,17 +97,21 @@ nav ul li a:hover {
 }
 
 .acceuil-text h1 {
-    font-size: 3em;
+    font-size: 4rem;
+    margin: 0;
+    font-weight: 700;
+    background: linear-gradient(to right, #fff, #cfd9ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
 }
 
-.acceuil-text h3 {
-    color: #ff4757;
-    font-size: 6em;
-}
-
-.acceuil-text h2 {
-    font-size: 1.5em;
-    opacity: 0.8;
+.acceuil-text p {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 20px auto 40px;
 }
 
 #corps {
@@ -93,39 +121,56 @@ nav ul li a:hover {
     height: 100vh;
     text-align: center;
     padding: 10px;
+    color: white;
+}
+
+.corps-text h1 {
+    font-size: 3rem;
+    margin: 0;
+    font-weight: 700;
+    background: linear-gradient(to right, #fff, #cfd9ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+}
+
+.corps-text p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin: 20px auto 40px;
 }
 
 #corps-projects {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 500px);
     text-align: center;
-    padding: 10px;
+    color: white;
+    font-size: 2rem;
 }
 
 .corps-text {
     max-width: 70%;
 }
 
-.corps-text h1 {
-    color: #ff4757;
-}
+
 
 /* Boutons */
 .button {
     display: inline-block;
-    background-color: #ff4757;
-    border-radius: 10px;
-    border: 4px double #cccccc;
-    color: white;
     text-align: center;
-    font-size: 20px;
-    padding: 15px;
-    width: 200px;
+    width: 300px;
     transition: all 0.5s;
     cursor: pointer;
     margin-top: 20px;
+    background: linear-gradient(45deg, #141432, #2f2f63);
+    backdrop-filter: blur(10px);
+    color: white;
+    border: 1px solid rgb(102, 126, 234);
+    padding: 14px 40px;
+    border-radius: 30px;
+    font-size: 1.1rem;
 }
 .button span {
     cursor: pointer;
@@ -142,7 +187,9 @@ nav ul li a:hover {
     transition: 0.5s;
 }
 .button:hover {
-    background-color: #ff9198;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 .button:hover span {
     padding-right: 25px;
@@ -162,25 +209,6 @@ section {
 h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
-}
-
-/* Pied de page */
-footer {
-    background: #111;
-    padding: 20px;
-    text-align: center;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-#footer_projects{
-    background: #111;
-    padding: 20px;
-    text-align: center;
-    position: absolute;
-    top: 1800px;
-    width: 100%;
 }
 
 /* Responsive */
@@ -254,7 +282,7 @@ footer {
 .project {
     width: 100%;
     height: 100%;
-    background: rgba(89, 89, 89, 0.9);
+    background: linear-gradient(45deg, #141432, #2f2f63);
     border-radius: 30px;
     display: flex;
     align-items: center;
@@ -336,14 +364,22 @@ footer {
     font-size: 14px;
     color: #ddd;
     margin: 5px 0;
+    align-items: center;
 }
 
-.project-text h4 {
-    font-size: 14px;
-    font-style: italic;
-    text-decoration: underline;
-    color: rgba(129, 129, 129, 0.9);
-    margin-top: 10px;
+.project-tags{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.project-tag{
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
 }
 
 /* Overlay avec le texte et le carousel */
@@ -355,7 +391,7 @@ footer {
     height: 100%;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    background: rgba(89, 89, 89, 0.9);
+    background: linear-gradient(45deg, #141432, #2f2f63);
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -381,6 +417,10 @@ footer {
     opacity: 1;
 }
 
+.espace-vide {
+    margin-bottom: 200px; /* Ajustez la valeur selon vos besoins */
+}
+
 /* Carousel */
 .carousel {
     display: flex;
@@ -394,6 +434,10 @@ footer {
 .carousel-container {
     position: relative;
     width: 60%;
+}
+
+.carousel-container img {
+    border-radius: 20px;
 }
 
 .carousel-indicators {

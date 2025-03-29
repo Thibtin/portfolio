@@ -8,516 +8,539 @@
 </head>
 <body>
 <header>
-    <div class="logo">🚀</div>
+    <div class="titre">
+        <div class="color-dot"></div>
+        <p>Mon Portfolio</p>
+    </div>
     <nav>
         <ul>
             <li><a href="index.html">Accueil</a></li>
             <li><a href="about.html">À propos</a></li>
-            <li><a href="projects.html">Projets</a></li>
+            <li><a class="active" href="projects.html">Projets</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 </header>
 
-<section id="corps-projects">
-    <div class="corps-text">
-        <h1>Mes Projets</h1>
-        <p>Voici quelques-uns de mes projets réalisés au cours de mes études.</p>
-    </div>
-</section>
+<section id="body-projects">
 
-<div class="container">
+    <section id="corps-projects">
+        <div class="corps-text">
+            <h1>Mes Projets</h1>
+            <p>Voici quelques-uns de mes projets réalisés au cours de mes études.</p>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <script>
+            function openFullscreen(img) {
+                const fullscreenContainer = document.getElementById("fullscreen-container");
+                const fullscreenImg = document.getElementById("fullscreen-img");
+
+                fullscreenImg.src = img.src;
+                fullscreenContainer.classList.add("show");
+            }
+        </script>
+
+        <!-- Projet 1 -->
+        <div class="projet-wrapper">
+            <div class="project">
+                <div class="project-content">
+                    <img src="./img/schotten_totten/acceuil.jpg" alt="Projet 1" class="project-image">
+                    <h3 class="project-title">Schotten Totten</h3>
+                    <div class="project-text">
+                        <p>Jeu de cartes et de stratégie pour deux joueurs avec l'implémentation d'une IA</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <h3>Schotten Totten</h3>
+                    <p class="description">Ce projet vise à créer une version numérique d’un jeu de cartes avec une intelligence
+                        artificielle capable de rivaliser avec un joueur humain. L’objectif était de modéliser
+                        fidèlement les règles, développer une IA stratégique avec Deep-Learning et concevoir une
+                        interface intuitive avec Pygame pour une expérience fluide. On a rencontré plusieurs défis,
+                        comme la gestion du temps et la complexité des algorithmes, mais l’IA progresse en apprenant
+                        de ses erreurs. Bien que le jeu soit fonctionnel, il reste des améliorations à apporter,
+                        notamment sur l’optimisation des performances et l’affinement des stratégies de
+                        l’IA.</p>
+                    <div class="carousel">
+                        <div class="carousel-container">
+                            <img src="./img/schotten_totten/menu.jpg" alt="Image 1" class="carousel-item active" onclick="openFullscreen(this)">
+                            <img src="./img/schotten_totten/jeu.jpg" alt="Image 2" class="carousel-item" onclick="openFullscreen(this)">
+                            <img src="./img/schotten_totten/machine_etat.jpg" alt="Image 3" class="carousel-item" onclick="openFullscreen(this)">
+                            <img src="./img/schotten_totten/action_ia.jpg" alt="Image 4" class="carousel-item" onclick="openFullscreen(this)">
+
+                            <button class="prev">❮</button>
+                            <button class="next">❯</button>
+                        </div>
+
+                        <div class="carousel-indicators">
+                            <h3>Images</h3>
+                            <p class="carousel-text active">Image du menu de jeu</p>
+                            <p class="carousel-text">Image de l'interface de jeu</p>
+                            <p class="carousel-text">Graphique machine à états du jeu</p>
+                            <p class="carousel-text">Code gérant l'action de l'IA</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projet 2 -->
+        <div class="projet-wrapper">
+            <div class="project">
+                <div class="project-content">
+                    <img src="./img/simulateur_iot/Iot.jpg" alt="Projet 2" class="project-image">
+                    <h3 class="project-title">Simulateur IoT - Qualité de l'air</h3>
+                    <div class="project-text">
+                        <p>Surveillance environnementale avec des capteurs</p>
+                        <div class="project-tags">
+                            <span class="project-tag">C++</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <h3>Simulateur IoT</h3>
+                    <p class="description">Ce projet consiste à développer un simulateur IoT en C++, destiné au suivi en temps réel des
+                        paramètres environnementaux tels que la température, le son, la lumière et l'humidité dans
+                        un environnement de travail. L’application utilise des concepts clés de la programmation
+                        orientée objet comme l’héritage, le polymorphisme et l’abstraction, pour générer, envoyer et
+                        stocker des données issues de différents capteurs dans des fichiers CSV.</p>
+                    <div class="carousel">
+                        <div class="carousel-container">
+                            <img src="./img/simulateur_iot/UML.jpg" alt="Image 1" class="carousel-item active" onclick="openFullscreen(this)">
+                            <img src="./img/simulateur_iot/CSV.jpg" alt="Image 2" class="carousel-item" onclick="openFullscreen(this)">
+                            <img src="./img/simulateur_iot/console.jpg" alt="Image 3" class="carousel-item" onclick="openFullscreen(this)">
+                            <button class="prev">❮</button>
+                            <button class="next">❯</button>
+                        </div>
+
+                        <div class="carousel-indicators">
+                            <h3>Images</h3>
+                            <p class="carousel-text active">Diagramme UML du projet</p>
+                            <p class="carousel-text">Image du fichier de stockage</p>
+                            <p class="carousel-text">Image des données récupérées</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projet 3 -->
+        <div class="projet-wrapper">
+            <div class="project">
+                <div class="project-content">
+                    <img src="./img/turing_machine/logo.jpg" alt="Projet 3" class="project-image">
+                    <h3 class="project-title">Turing Machine</h3>
+                    <div class="project-text">
+                        <p>Un jeu de réflexion basé sur la logique</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Java</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <h3>Turing Machine</h3>
+                    <p class="description">Ce projet consiste à développer une version numérique du jeu "Turing Machine", un jeu de
+                    logique et de déduction, en l’adaptant à un contexte universitaire. L’objectif était de
+                    modéliser les règles du jeu, concevoir une interface intuitive en Java et implémenter un
+                    système de vérification logique permettant de deviner une salle de cours à partir d’indices.
+                    L’équipe a dû relever plusieurs défis, notamment la gestion de l’interface et l’intégration
+                    des différentes classes. Bien que le projet soit fonctionnel, des améliorations restent
+                    possibles sur l’optimisation du code et l’ergonomie de l’application.</p>
+                    <div class="carousel">
+                        <div class="carousel-container">
+                            <img src="./img/turing_machine/jeu.jpg" alt="Image 1" class="carousel-item active" onclick="openFullscreen(this)">
+                            <img src="./img/turing_machine/menu.jpg" alt="Image 2" class="carousel-item" onclick="openFullscreen(this)">
+                            <img src="./img/turing_machine/DiagrammeCasUtilisation.jpg" alt="Image 3" class="carousel-item" onclick="openFullscreen(this)">
+                            <img src="./img/turing_machine/DiagrammeClasse.jpg" alt="Image 4" class="carousel-item" onclick="openFullscreen(this)">
+                            <img src="./img/turing_machine/DiagrammeSéquence.jpg" alt="Image 5" class="carousel-item" onclick="openFullscreen(this)">
+                            <button class="prev">❮</button>
+                            <button class="next">❯</button>
+                        </div>
+
+                        <div class="carousel-indicators">
+                            <h3>Images</h3>
+                            <p class="carousel-text active">Image du jeu</p>
+                            <p class="carousel-text">Image du menu de jeu</p>
+                            <p class="carousel-text">Diagramme cas d'utilisation du projet</p>
+                            <p class="carousel-text">Diagramme de classe du projet</p>
+                            <p class="carousel-text">Diagramme de sequence du projet</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projet 4 -->
+        <div class="projet-wrapper">
+            <div class="project">
+                <div class="project-content">
+                    <img src="./img/unity/logo_unity.jpg" alt="Projet 4" class="project-image">
+                    <h3 class="project-title">Projet Unity</h3>
+                    <div class="project-text">
+                        <p>Un jeu vidéo innovant combinant trois genres distincts pour une expérience ludique unique</p>
+                        <div class="project-tags">
+                            <span class="project-tag">C#</span>
+                            <span class="project-tag">Unity</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <h3>Projet Unity</h3>
+                    <p class="description">Ce projet, intitulé "3 in 1", est le résultat final d'un cours sur Unity.
+                        Il s'agit d'un jeu vidéo développé avec Unity qui fusionne trois genres de jeu différents
+                        en une seule expérience cohérente. L'objectif était de démontrer la polyvalence du moteur Unity
+                        et la capacité de l'équipe à intégrer diverses mécaniques de jeu au sein d'un même projet.
+                        Les principaux défis rencontrés incluent la gestion de la transition fluide entre les différents genres,
+                        l'harmonisation des styles graphiques et la création d'une interface utilisateur intuitive.
+                        Bien que le jeu soit pleinement fonctionnel, des améliorations pourraient être apportées pour optimiser
+                        les performances et enrichir le contenu afin d'offrir une expérience encore plus immersive aux joueurs.</p>
+                    <div class="carousel">
+                        <div class="carousel-container">
+                            <img src="./img/unity/menu.jpg" alt="Image 1" class="carousel-item active" onclick="openFullscreen(this)">
+                            <img src="./img/unity/apple_catcher.jpg" alt="Image 2" class="carousel-item" onclick="openFullscreen(this)">
+                            <img src="./img/unity/apple_catcher_end.jpg" alt="Image 3" class="carousel-item" onclick="openFullscreen(this)">
+                            <img src="./img/unity/brick_breaker.jpg" alt="Image 4" class="carousel-item" onclick="openFullscreen(this)">
+                            <img src="./img/unity/brick_breaker_end.jpg" alt="Image 5" class="carousel-item" onclick="openFullscreen(this)">
+                            <img src="./img/unity/mini_ufo.jpg" alt="Image 6" class="carousel-item" onclick="openFullscreen(this)">
+                            <img src="./img/unity/mini_ufo_end.jpg" alt="Image 7" class="carousel-item" onclick="openFullscreen(this)">
+                            <button class="prev">❮</button>
+                            <button class="next">❯</button>
+                        </div>
+
+                        <div class="carousel-indicators">
+                            <h3>Images</h3>
+                            <p class="carousel-text active">Image du menu de jeu</p>
+                            <p class="carousel-text">Image du jeu Apple Catcher</p>
+                            <p class="carousel-text">Image de la fin du jeu Apple Catcher</p>
+                            <p class="carousel-text">Image du jeu Brick Breaker</p>
+                            <p class="carousel-text">Image de la fin du jeu Brick Breaker</p>
+                            <p class="carousel-text">Image du jeu Mini UFO Attack</p>
+                            <p class="carousel-text">Image de la fin du jeu Mini UFO Attack</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Projet 5 -->
+        <div class="projet-wrapper">
+            <div class="project">
+                <div class="project-content">
+                    <img src="./img/one_hand_game/logo.jpg" alt="Projet 5" class="project-image">
+                    <h3 class="project-title">One Hand Game</h3>
+                    <div class="project-text">
+                        <p>Un jeu de cartes solitaire basé sur la stratégie et la gestion des probabilités</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Java</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <h3>One Hand Game</h3>
+                    <p class="description">Ce projet consiste à développer une version numérique du jeu de cartes "One Hand",
+                        une variante de la réussite, en reproduisant fidèlement ses règles et ses mécaniques.
+                        Le jeu utilise un paquet de 52 cartes mélangées et repose sur des choix stratégiques
+                        pour marquer des points en fonction des correspondances entre les cartes visibles.
+                        L'objectif était de concevoir une interface intuitive et de mettre en place une logique
+                        de jeu robuste gérant les différentes actions possibles, y compris l'utilisation limitée d’un Joker.
+                        J'ai dû relever des défis techniques, notamment l'implémentation des règles de gestion des cartes et
+                        la fluidité du gameplay. Bien que le projet soit fonctionnel, des améliorations pourraient être apportées
+                        à l’ergonomie et aux animations pour une meilleure expérience utilisateur.</p>
+                    <div class="carousel">
+                        <div class="carousel-container">
+                            <img src="./img/one_hand_game/plateau.jpg" alt="Image 1" class="carousel-item active" onclick="openFullscreen(this)">
+                            <img src="./img/one_hand_game/uml_diagram.jpg" alt="Image 2" class="carousel-item" onclick="openFullscreen(this)">
+                            <button class="prev">❮</button>
+                            <button class="next">❯</button>
+                        </div>
+
+                        <div class="carousel-indicators">
+                            <h3>Images</h3>
+                            <p class="carousel-text active">Image du plateau de jeu</p>
+                            <p class="carousel-text">Diagramme UML du projet</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Projet 6 -->
+        <div class="projet-wrapper">
+            <div class="project">
+                <div class="project-content">
+                    <img src="./img/lo21/icon.jpg" alt="Projet 6" class="project-image">
+                    <h3 class="project-title">NeuroTrack</h3>
+                    <div class="project-text">
+                        <p> Optimisation et gestion intelligente des ressources à travers une solution innovante</p>
+                        <div class="project-tags">
+                            <span class="project-tag">C</span>
+                            <span class="project-tag">Algorithme</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <h3>NeuroTrack</h3>
+                    <p class="description">Ce projet vise à développer une solution permettant d’optimiser la gestion
+                        des ressources dans un environnement spécifique. Grâce à une approche mêlant modélisation,
+                        conception logicielle et intégration d’algorithmes avancés, l’équipe a conçu un système
+                        fonctionnel répondant à des besoins précis. Le développement a nécessité une réflexion approfondie
+                        sur l’architecture du projet, la gestion des données et l’ergonomie de l’interface utilisateur.
+                        Malgré les défis rencontrés, notamment l’adaptation aux contraintes techniques,
+                        le projet offre une base solide pouvant être améliorée par des optimisations futures.</p>
+                    <div class="carousel">
+                        <div class="carousel-container">
+                            <img src="./img/lo21/règles.jpg" alt="Image 1" class="carousel-item active" onclick="openFullscreen(this)">
+                            <img src="./img/lo21/accueil.jpg" alt="Image 2" class="carousel-item" onclick="openFullscreen(this)">
+                            <img src="./img/lo21/jeu_essais.jpg" alt="Image 3" class="carousel-item" onclick="openFullscreen(this)">
+                            <button class="prev">❮</button>
+                            <button class="next">❯</button>
+                        </div>
+
+                        <div class="carousel-indicators">
+                            <h3>Images</h3>
+                            <p class="carousel-text active">Règles implémentées à la base</p>
+                            <p class="carousel-text">Image du menu</p>
+                            <p class="carousel-text">Jeu d'essai</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Projet 7 -->
+        <div class="projet-wrapper">
+            <div class="project">
+                <div class="project-content">
+                    <img src="./img/solar_panel/logo.jpg" alt="Projet 7" class="project-image">
+                    <h3 class="project-title">Solar-Panel</h3>
+                    <div class="project-text">
+                        <p>Suivi intelligent du soleil pour une production énergétique optimisée</p>
+                        <div class="project-tags">
+                            <span class="project-tag">C++</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <h3>Solar-Panel</h3>
+                    <p class="description">Ce projet vise à concevoir un panneau solaire à suivi automatique capable
+                        d’optimiser la production d’énergie en s’orientant en fonction de la position du soleil.
+                        Il utilise des capteurs de luminosité (luxmètre, photorésistances) pour ajuster son inclinaison
+                        sur deux axes. L’équipe a réparti les tâches entre la conception hardware, software et serveur
+                        NodeRed. Pour la modélisation et le prototypage, Fusion360, Arduino IDE et Tinkercad ont été
+                        utilisés. Malgré des défis liés à l’impression 3D, des ajustements ont permis de respecter
+                        les contraintes de fabrication.</p>
+                    <div class="carousel">
+                        <div class="carousel-container">
+                            <img src="./img/solar_panel/dashboard.jpg" alt="Image 1" class="carousel-item active" onclick="openFullscreen(this)">
+                            <img src="./img/solar_panel/modelise3d.jpg" alt="Image 2" class="carousel-item" onclick="openFullscreen(this)">
+                            <img src="./img/solar_panel/nodered.jpg" alt="Image 3" class="carousel-item" onclick="openFullscreen(this)">
+                            <img src="./img/solar_panel/schema.jpg" alt="Image 4" class="carousel-item" onclick="openFullscreen(this)">
+                            <img src="img/solar_panel/tinkercad.jpg" alt="Image 5" class="carousel-item" onclick="openFullscreen(this)">
+                            <button class="prev">❮</button>
+                            <button class="next">❯</button>
+                        </div>
+
+                        <div class="carousel-indicators">
+                            <h3>Images</h3>
+                            <p class="carousel-text active">Image du dashboard</p>
+                            <p class="carousel-text">Modèle 3D pour impression 3D</p>
+                            <p class="carousel-text">Node-Red</p>
+                            <p class="carousel-text">Organigramme de décision</p>
+                            <p class="carousel-text">Circuit tinkercad</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projet 8 -->
+        <div class="projet-wrapper">
+            <div class="project">
+                <div class="project-content">
+                    <img src="./img/virtual_trader/logo.jpg" alt="Projet 7" class="project-image">
+                    <h3 class="project-title">Virtual Trader</h3>
+                    <div class="project-text">
+                        <p>PA</p>
+                        <div class="project-tags">
+                            <span class="project-tag">SQL</span>
+                            <span class="project-tag">PHP</span>
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <h3>Virtual Trader</h3>
+                    <p class="description">DESC</p>
+                    <div class="carousel">
+                        <div class="carousel-container">
+                            <img src="./img/virtual_trader/login.jpg" alt="Image 1" class="carousel-item active" onclick="openFullscreen(this)">
+                            <img src="./img/virtual_trader/acceuil.jpg" alt="Image 2" class="carousel-item" onclick="openFullscreen(this)">
+                            <img src="./img/virtual_trader/game_over.jpg" alt="Image 3" class="carousel-item" onclick="openFullscreen(this)">
+                            <img src="./img/virtual_trader/bdd.jpg" alt="Image 4" class="carousel-item" onclick="openFullscreen(this)">
+                            <img src="img/virtual_trader/diagramme_entite_association.jpg" alt="Image 5" class="carousel-item" onclick="openFullscreen(this)">
+                            <button class="prev">❮</button>
+                            <button class="next">❯</button>
+                        </div>
+
+                        <div class="carousel-indicators">
+                            <h3>Images</h3>
+                            <p class="carousel-text active">Page de connexion</p>
+                            <p class="carousel-text">Page d'acceuil</p>
+                            <p class="carousel-text">Page Game Over</p>
+                            <p class="carousel-text">Schéma de la base de données</p>
+                            <p class="carousel-text">Diagramme Entité Association</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projet 9 -->
+        <div class="projet-wrapper">
+            <div class="project">
+                <div class="project-content">
+                    <img src="./img/tablut/logo.jpg" alt="Projet 7" class="project-image">
+                    <h3 class="project-title">Tablut</h3>
+                    <div class="project-text">
+                        <p>PA</p>
+                        <div class="project-tags">
+                            <span class="project-tag">C</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <h3>Tablut</h3>
+                    <p class="description">DESC</p>
+                    <div class="carousel">
+                        <div class="carousel-container">
+                            <img src="./img/tablut/menu.jpg" alt="Image 1" class="carousel-item active" onclick="openFullscreen(this)">
+                            <img src="./img/tablut/plateau.jpg" alt="Image 2" class="carousel-item" onclick="openFullscreen(this)">
+                            <img src="./img/tablut/fct_creation_plateau.jpg" alt="Image 3" class="carousel-item" onclick="openFullscreen(this)">
+                            <img src="./img/tablut/fct_placement_roi.jpg" alt="Image 4" class="carousel-item" onclick="openFullscreen(this)">
+                            <img src="img/tablut/fct_placement_blanc.jpg" alt="Image 5" class="carousel-item" onclick="openFullscreen(this)">
+                            <img src="img/tablut/fct_placement_noir.jpg" alt="Image 5" class="carousel-item" onclick="openFullscreen(this)">
+                            <button class="prev">❮</button>
+                            <button class="next">❯</button>
+                        </div>
+
+                        <div class="carousel-indicators">
+                            <h3>Images</h3>
+                            <p class="carousel-text active">Menu du jeu</p>
+                            <p class="carousel-text">Plateau du jeu</p>
+                            <p class="carousel-text">Fonction de creation du plateau</p>
+                            <p class="carousel-text">Boucle pour le placement du roi</p>
+                            <p class="carousel-text">Boucle pour le placement des pions blancs</p>
+                            <p class="carousel-text">Boucle pour le placement des pions noirs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="espace-vide"></div>
+
+
+    <!-- Fenêtre d'affichage en plein écran -->
+    <div id="fullscreen-container" class="hidden">
+        <span id="close">&times;</span>
+        <img id="fullscreen-img" alt="img_full_screen" src="">
+    </div>
 
     <script>
-        function openFullscreen(img) {
-            const fullscreenContainer = document.getElementById("fullscreen-container");
-            const fullscreenImg = document.getElementById("fullscreen-img");
+        document.addEventListener("DOMContentLoaded", function () {
 
-            fullscreenImg.src = img.src;
-            fullscreenContainer.classList.add("show");
-        }
-    </script>
-
-    <!-- Projet 1 -->
-    <div class="projet-wrapper">
-        <div class="project">
-            <div class="project-content">
-                <img src="./img/schotten_totten/acceuil.jpg" alt="Projet 1" class="project-image">
-                <h3 class="project-title">Schotten Totten</h3>
-                <div class="project-text">
-                    <p>Jeu de cartes et de stratégie pour deux joueurs avec l'implémentation d'une IA</p>
-                    <h4>Langage : Python</h4>
-                </div>
-            </div>
-            <div class="project-details">
-                <h3>Schotten Totten</h3>
-                <p class="description">Ce projet vise à créer une version numérique d’un jeu de cartes avec une intelligence
-                    artificielle capable de rivaliser avec un joueur humain. L’objectif était de modéliser
-                    fidèlement les règles, développer une IA stratégique avec Deep-Learning et concevoir une
-                    interface intuitive avec Pygame pour une expérience fluide. On a rencontré plusieurs défis,
-                    comme la gestion du temps et la complexité des algorithmes, mais l’IA progresse en apprenant
-                    de ses erreurs. Bien que le jeu soit fonctionnel, il reste des améliorations à apporter,
-                    notamment sur l’optimisation des performances et l’affinement des stratégies de
-                    l’IA.</p>
-                <div class="carousel">
-                    <div class="carousel-container">
-                        <img src="./img/schotten_totten/menu.jpg" alt="Image 1" class="carousel-item active" onclick="openFullscreen(this)">
-                        <img src="./img/schotten_totten/jeu.jpg" alt="Image 2" class="carousel-item" onclick="openFullscreen(this)">
-                        <img src="./img/schotten_totten/machine_etat.jpg" alt="Image 3" class="carousel-item" onclick="openFullscreen(this)">
-                        <img src="./img/schotten_totten/action_ia.jpg" alt="Image 4" class="carousel-item" onclick="openFullscreen(this)">
-
-                        <button class="prev">❮</button>
-                        <button class="next">❯</button>
-                    </div>
-
-                    <div class="carousel-indicators">
-                        <h3>Images</h3>
-                        <p class="carousel-text active">Image du menu de jeu</p>
-                        <p class="carousel-text">Image de l'interface de jeu</p>
-                        <p class="carousel-text">Graphique machine à états du jeu</p>
-                        <p class="carousel-text">Code gérant l'action de l'IA</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Projet 2 -->
-    <div class="projet-wrapper">
-        <div class="project">
-            <div class="project-content">
-                <img src="./img/simulateur_iot/Iot.jpg" alt="Projet 2" class="project-image">
-                <h3 class="project-title">Simulateur IoT - Qualité de l'air</h3>
-                <div class="project-text">
-                    <p>Surveillance environnementale avec des capteurs</p>
-                    <h4>Langage : C++</h4>
-                </div>
-            </div>
-            <div class="project-details">
-                <h3>Simulateur IoT</h3>
-                <p class="description">Ce projet consiste à développer un simulateur IoT en C++, destiné au suivi en temps réel des
-                    paramètres environnementaux tels que la température, le son, la lumière et l'humidité dans
-                    un environnement de travail. L’application utilise des concepts clés de la programmation
-                    orientée objet comme l’héritage, le polymorphisme et l’abstraction, pour générer, envoyer et
-                    stocker des données issues de différents capteurs dans des fichiers CSV.</p>
-                <div class="carousel">
-                    <div class="carousel-container">
-                        <img src="./img/simulateur_iot/UML.jpg" alt="Image 1" class="carousel-item active" onclick="openFullscreen(this)">
-                        <img src="./img/simulateur_iot/CSV.jpg" alt="Image 2" class="carousel-item" onclick="openFullscreen(this)">
-                        <img src="./img/simulateur_iot/console.jpg" alt="Image 3" class="carousel-item" onclick="openFullscreen(this)">
-                        <button class="prev">❮</button>
-                        <button class="next">❯</button>
-                    </div>
-
-                    <div class="carousel-indicators">
-                        <h3>Images</h3>
-                        <p class="carousel-text active">Diagramme UML du projet</p>
-                        <p class="carousel-text">Image du fichier de stockage</p>
-                        <p class="carousel-text">Image des données récupérées</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Projet 3 -->
-    <div class="projet-wrapper">
-        <div class="project">
-            <div class="project-content">
-                <img src="./img/turing_machine/logo.jpg" alt="Projet 3" class="project-image">
-                <h3 class="project-title">Turing Machine</h3>
-                <div class="project-text">
-                    <p>Un jeu de réflexion basé sur la logique</p>
-                    <h4>Langage : Java</h4>
-                </div>
-            </div>
-            <div class="project-details">
-                <h3>Turing Machine</h3>
-                <p class="description">Ce projet consiste à développer une version numérique du jeu "Turing Machine", un jeu de
-                logique et de déduction, en l’adaptant à un contexte universitaire. L’objectif était de
-                modéliser les règles du jeu, concevoir une interface intuitive en Java et implémenter un
-                système de vérification logique permettant de deviner une salle de cours à partir d’indices.
-                L’équipe a dû relever plusieurs défis, notamment la gestion de l’interface et l’intégration
-                des différentes classes. Bien que le projet soit fonctionnel, des améliorations restent
-                possibles sur l’optimisation du code et l’ergonomie de l’application.</p>
-                <div class="carousel">
-                    <div class="carousel-container">
-                        <img src="./img/turing_machine/jeu.jpg" alt="Image 1" class="carousel-item active" onclick="openFullscreen(this)">
-                        <img src="./img/turing_machine/menu.jpg" alt="Image 2" class="carousel-item" onclick="openFullscreen(this)">
-                        <img src="./img/turing_machine/DiagrammeCasUtilisation.jpg" alt="Image 3" class="carousel-item" onclick="openFullscreen(this)">
-                        <img src="./img/turing_machine/DiagrammeClasse.jpg" alt="Image 4" class="carousel-item" onclick="openFullscreen(this)">
-                        <img src="./img/turing_machine/DiagrammeSéquence.jpg" alt="Image 5" class="carousel-item" onclick="openFullscreen(this)">
-                        <button class="prev">❮</button>
-                        <button class="next">❯</button>
-                    </div>
-
-                    <div class="carousel-indicators">
-                        <h3>Images</h3>
-                        <p class="carousel-text active">Image du jeu</p>
-                        <p class="carousel-text">Image du menu de jeu</p>
-                        <p class="carousel-text">Diagramme cas d'utilisation du projet</p>
-                        <p class="carousel-text">Diagramme de classe du projet</p>
-                        <p class="carousel-text">Diagramme de sequence du projet</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Projet 4 -->
-    <div class="projet-wrapper">
-        <div class="project">
-            <div class="project-content">
-                <img src="./img/unity/logo_unity.jpg" alt="Projet 4" class="project-image">
-                <h3 class="project-title">Projet Unity</h3>
-                <div class="project-text">
-                    <p>Un jeu vidéo innovant combinant trois genres distincts pour une expérience ludique unique</p>
-                    <h4>Langage : C# / Unity</h4>
-                </div>
-            </div>
-            <div class="project-details">
-                <h3>Projet Unity</h3>
-                <p class="description">Ce projet, intitulé "3 in 1", est le résultat final d'un cours sur Unity.
-                    Il s'agit d'un jeu vidéo développé avec Unity qui fusionne trois genres de jeu différents
-                    en une seule expérience cohérente. L'objectif était de démontrer la polyvalence du moteur Unity
-                    et la capacité de l'équipe à intégrer diverses mécaniques de jeu au sein d'un même projet.
-                    Les principaux défis rencontrés incluent la gestion de la transition fluide entre les différents genres,
-                    l'harmonisation des styles graphiques et la création d'une interface utilisateur intuitive.
-                    Bien que le jeu soit pleinement fonctionnel, des améliorations pourraient être apportées pour optimiser
-                    les performances et enrichir le contenu afin d'offrir une expérience encore plus immersive aux joueurs.</p>
-                <div class="carousel">
-                    <div class="carousel-container">
-                        <img src="./img/unity/menu.jpg" alt="Image 1" class="carousel-item active" onclick="openFullscreen(this)">
-                        <img src="./img/unity/apple_catcher.jpg" alt="Image 2" class="carousel-item" onclick="openFullscreen(this)">
-                        <img src="./img/unity/apple_catcher_end.jpg" alt="Image 3" class="carousel-item" onclick="openFullscreen(this)">
-                        <img src="./img/unity/brick_breaker.jpg" alt="Image 4" class="carousel-item" onclick="openFullscreen(this)">
-                        <img src="./img/unity/brick_breaker_end.jpg" alt="Image 5" class="carousel-item" onclick="openFullscreen(this)">
-                        <img src="./img/unity/mini_ufo.jpg" alt="Image 6" class="carousel-item" onclick="openFullscreen(this)">
-                        <img src="./img/unity/mini_ufo_end.jpg" alt="Image 7" class="carousel-item" onclick="openFullscreen(this)">
-                        <button class="prev">❮</button>
-                        <button class="next">❯</button>
-                    </div>
-
-                    <div class="carousel-indicators">
-                        <h3>Images</h3>
-                        <p class="carousel-text active">Image du menu de jeu</p>
-                        <p class="carousel-text">Image du jeu Apple Catcher</p>
-                        <p class="carousel-text">Image de la fin du jeu Apple Catcher</p>
-                        <p class="carousel-text">Image du jeu Brick Breaker</p>
-                        <p class="carousel-text">Image de la fin du jeu Brick Breaker</p>
-                        <p class="carousel-text">Image du jeu Mini UFO Attack</p>
-                        <p class="carousel-text">Image de la fin du jeu Mini UFO Attack</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Projet 5 -->
-    <div class="projet-wrapper">
-        <div class="project">
-            <div class="project-content">
-                <img src="./img/one_hand_game/logo.jpg" alt="Projet 5" class="project-image">
-                <h3 class="project-title">One Hand Game</h3>
-                <div class="project-text">
-                    <p>Un jeu de cartes solitaire basé sur la stratégie et la gestion des probabilités</p>
-                    <h4>Langage : Java</h4>
-                </div>
-            </div>
-            <div class="project-details">
-                <h3>One Hand Game</h3>
-                <p class="description">Ce projet consiste à développer une version numérique du jeu de cartes "One Hand",
-                    une variante de la réussite, en reproduisant fidèlement ses règles et ses mécaniques.
-                    Le jeu utilise un paquet de 52 cartes mélangées et repose sur des choix stratégiques
-                    pour marquer des points en fonction des correspondances entre les cartes visibles.
-                    L'objectif était de concevoir une interface intuitive et de mettre en place une logique
-                    de jeu robuste gérant les différentes actions possibles, y compris l'utilisation limitée d’un Joker.
-                    J'ai dû relever des défis techniques, notamment l'implémentation des règles de gestion des cartes et
-                    la fluidité du gameplay. Bien que le projet soit fonctionnel, des améliorations pourraient être apportées
-                    à l’ergonomie et aux animations pour une meilleure expérience utilisateur.</p>
-                <div class="carousel">
-                    <div class="carousel-container">
-                        <img src="./img/one_hand_game/plateau.jpg" alt="Image 1" class="carousel-item active" onclick="openFullscreen(this)">
-                        <img src="./img/one_hand_game/uml_diagram.jpg" alt="Image 2" class="carousel-item" onclick="openFullscreen(this)">
-                        <button class="prev">❮</button>
-                        <button class="next">❯</button>
-                    </div>
-
-                    <div class="carousel-indicators">
-                        <h3>Images</h3>
-                        <p class="carousel-text active">Image du plateau de jeu</p>
-                        <p class="carousel-text">Diagramme UML du projet</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Projet 6 -->
-    <div class="projet-wrapper">
-        <div class="project">
-            <div class="project-content">
-                <img src="./img/lo21/icon.jpg" alt="Projet 6" class="project-image">
-                <h3 class="project-title">NeuroTrack</h3>
-                <div class="project-text">
-                    <p> Optimisation et gestion intelligente des ressources à travers une solution innovante</p>
-                    <h4>Langage : C / Algorithme</h4>
-                </div>
-            </div>
-            <div class="project-details">
-                <h3>NeuroTrack</h3>
-                <p class="description">Ce projet vise à développer une solution permettant d’optimiser la gestion
-                    des ressources dans un environnement spécifique. Grâce à une approche mêlant modélisation,
-                    conception logicielle et intégration d’algorithmes avancés, l’équipe a conçu un système
-                    fonctionnel répondant à des besoins précis. Le développement a nécessité une réflexion approfondie
-                    sur l’architecture du projet, la gestion des données et l’ergonomie de l’interface utilisateur.
-                    Malgré les défis rencontrés, notamment l’adaptation aux contraintes techniques,
-                    le projet offre une base solide pouvant être améliorée par des optimisations futures.</p>
-                <div class="carousel">
-                    <div class="carousel-container">
-                        <img src="./img/lo21/règles.jpg" alt="Image 1" class="carousel-item active" onclick="openFullscreen(this)">
-                        <img src="./img/lo21/accueil.jpg" alt="Image 2" class="carousel-item" onclick="openFullscreen(this)">
-                        <img src="./img/lo21/jeu_essais.jpg" alt="Image 3" class="carousel-item" onclick="openFullscreen(this)">
-                        <button class="prev">❮</button>
-                        <button class="next">❯</button>
-                    </div>
-
-                    <div class="carousel-indicators">
-                        <h3>Images</h3>
-                        <p class="carousel-text active">Règles implémentées à la base</p>
-                        <p class="carousel-text">Image du menu</p>
-                        <p class="carousel-text">Jeu d'essai</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Projet 7 -->
-    <div class="projet-wrapper">
-        <div class="project">
-            <div class="project-content">
-                <img src="./img/solar_panel/logo.jpg" alt="Projet 7" class="project-image">
-                <h3 class="project-title">Solar-Panel</h3>
-                <div class="project-text">
-                    <p>Suivi intelligent du soleil pour une production énergétique optimisée</p>
-                    <h4>Langage : C++</h4>
-                </div>
-            </div>
-            <div class="project-details">
-                <h3>Solar-Panel</h3>
-                <p class="description">Ce projet vise à concevoir un panneau solaire à suivi automatique capable
-                    d’optimiser la production d’énergie en s’orientant en fonction de la position du soleil.
-                    Il utilise des capteurs de luminosité (luxmètre, photorésistances) pour ajuster son inclinaison
-                    sur deux axes. L’équipe a réparti les tâches entre la conception hardware, software et serveur
-                    NodeRed. Pour la modélisation et le prototypage, Fusion360, Arduino IDE et Tinkercad ont été
-                    utilisés. Malgré des défis liés à l’impression 3D, des ajustements ont permis de respecter
-                    les contraintes de fabrication.</p>
-                <div class="carousel">
-                    <div class="carousel-container">
-                        <img src="./img/solar_panel/dashboard.jpg" alt="Image 1" class="carousel-item active" onclick="openFullscreen(this)">
-                        <img src="./img/solar_panel/modelise3d.jpg" alt="Image 2" class="carousel-item" onclick="openFullscreen(this)">
-                        <img src="./img/solar_panel/nodered.jpg" alt="Image 3" class="carousel-item" onclick="openFullscreen(this)">
-                        <img src="./img/solar_panel/schema.jpg" alt="Image 4" class="carousel-item" onclick="openFullscreen(this)">
-                        <img src="img/solar_panel/tinkercad.jpg" alt="Image 5" class="carousel-item" onclick="openFullscreen(this)">
-                        <button class="prev">❮</button>
-                        <button class="next">❯</button>
-                    </div>
-
-                    <div class="carousel-indicators">
-                        <h3>Images</h3>
-                        <p class="carousel-text active">Image du dashboard</da>u</p>
-                        <p class="carousel-text">Modèle 3D pour impression 3D</p>
-                        <p class="carousel-text">Node-Red</p>
-                        <p class="carousel-text">Organigramme de décision</p>
-                        <p class="carousel-text">Circuit tinkercad</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Projet 8 -->
-    <div class="projet-wrapper">
-        <div class="project">
-            <div class="project-content">
-                <img src="./img/virtual_trader/logo.jpg" alt="Projet 7" class="project-image">
-                <h3 class="project-title">Virtual Trader</h3>
-                <div class="project-text">
-                    <p>PA</p>
-                    <h4>Langage : SQL / PHP / HTML / CSS </h4>
-                </div>
-            </div>
-            <div class="project-details">
-                <h3>Virtual Trader</h3>
-                <p class="description">DESC</p>
-                <div class="carousel">
-                    <div class="carousel-container">
-                        <img src="./img/virtual_trader/login.jpg" alt="Image 1" class="carousel-item active" onclick="openFullscreen(this)">
-                        <img src="./img/virtual_trader/acceuil.jpg" alt="Image 2" class="carousel-item" onclick="openFullscreen(this)">
-                        <img src="./img/virtual_trader/game_over.jpg" alt="Image 3" class="carousel-item" onclick="openFullscreen(this)">
-                        <img src="./img/virtual_trader/bdd.jpg" alt="Image 4" class="carousel-item" onclick="openFullscreen(this)">
-                        <img src="img/virtual_trader/diagramme_entite_association.jpg" alt="Image 5" class="carousel-item" onclick="openFullscreen(this)">
-                        <button class="prev">❮</button>
-                        <button class="next">❯</button>
-                    </div>
-
-                    <div class="carousel-indicators">
-                        <h3>Images</h3>
-                        <p class="carousel-text active">Page de connexion</da>u</p>
-                        <p class="carousel-text">Page d'acceuil</p>
-                        <p class="carousel-text">Page Game Over</p>
-                        <p class="carousel-text">Schéma de la base de données</p>
-                        <p class="carousel-text">Diagramme Entité Association</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Projet 9 -->
-    <div class="projet-wrapper">
-        <div class="project">
-            <div class="project-content">
-                <img src="./img/tablut/logo.jpg" alt="Projet 7" class="project-image">
-                <h3 class="project-title">Tablut</h3>
-                <div class="project-text">
-                    <p>PA</p>
-                    <h4>Langage : C </h4>
-                </div>
-            </div>
-            <div class="project-details">
-                <h3>Tablut</h3>
-                <p class="description">DESC</p>
-                <div class="carousel">
-                    <div class="carousel-container">
-                        <img src="./img/tablut/menu.jpg" alt="Image 1" class="carousel-item active" onclick="openFullscreen(this)">
-                        <img src="./img/tablut/plateau.jpg" alt="Image 2" class="carousel-item" onclick="openFullscreen(this)">
-                        <img src="./img/tablut/fct_creation_plateau.jpg" alt="Image 3" class="carousel-item" onclick="openFullscreen(this)">
-                        <img src="./img/tablut/fct_placement_roi.jpg" alt="Image 4" class="carousel-item" onclick="openFullscreen(this)">
-                        <img src="img/tablut/fct_placement_blanc.jpg" alt="Image 5" class="carousel-item" onclick="openFullscreen(this)">
-                        <img src="img/tablut/fct_placement_noir.jpg" alt="Image 5" class="carousel-item" onclick="openFullscreen(this)">
-                        <button class="prev">❮</button>
-                        <button class="next">❯</button>
-                    </div>
-
-                    <div class="carousel-indicators">
-                        <h3>Images</h3>
-                        <p class="carousel-text active">Menu du jeu</da>u</p>
-                        <p class="carousel-text">Plateau du jeu</p>
-                        <p class="carousel-text">Fonction de creation du plateau</p>
-                        <p class="carousel-text">Boucle pour le placement du roi</p>
-                        <p class="carousel-text">Boucle pour le placement des pions blancs</p>
-                        <p class="carousel-text">Boucle pour le placement des pions noirs</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-
-<!-- Fenêtre d'affichage en plein écran -->
-<div id="fullscreen-container" class="hidden">
-    <span id="close">&times;</span>
-    <img id="fullscreen-img" alt="img_full_screen" src="">
-</div>
-
-<footer id="footer_projects">
-    <p>&copy; 2025 Mon Portfolio - Tous droits réservés.</p>
-</footer>
-
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-
-        document.getElementById("close").addEventListener("click", () => {
-            document.getElementById("fullscreen-container").classList.remove("show");
-        });
-
-        document.getElementById("fullscreen-container").addEventListener("click", (e) => {
-            if (e.target === document.getElementById("fullscreen-container")) {
+            document.getElementById("close").addEventListener("click", () => {
                 document.getElementById("fullscreen-container").classList.remove("show");
-            }
-        });
+            });
 
-        const carousels = document.querySelectorAll(".carousel-container");
+            document.getElementById("fullscreen-container").addEventListener("click", (e) => {
+                if (e.target === document.getElementById("fullscreen-container")) {
+                    document.getElementById("fullscreen-container").classList.remove("show");
+                }
+            });
 
-        carousels.forEach(carousel => {
-            const items = carousel.querySelectorAll(".carousel-item");
-            const indicators = carousel.nextElementSibling.querySelectorAll(".carousel-text");
-            const totalItems = items.length;
-            const nextBtn = carousel.querySelector(".next");
-            const prevBtn = carousel.querySelector(".prev");
+            const carousels = document.querySelectorAll(".carousel-container");
 
-            let currentIndex = 0;
-            let autoSlide;
+            carousels.forEach(carousel => {
+                const items = carousel.querySelectorAll(".carousel-item");
+                const indicators = carousel.nextElementSibling.querySelectorAll(".carousel-text");
+                const totalItems = items.length;
+                const nextBtn = carousel.querySelector(".next");
+                const prevBtn = carousel.querySelector(".prev");
 
-            function showSlide(index) {
-                items.forEach((item, i) => {
-                    item.classList.remove("active");
-                    item.style.display = i === index ? "block" : "none";
-                });
+                let currentIndex = 0;
+                let autoSlide;
 
-                indicators.forEach((indicator, i) => {
-                    indicator.classList.remove("active");
-                    if (i === index) {
-                        indicator.classList.add("active");
-                    }
-                });
-            }
+                function showSlide(index) {
+                    items.forEach((item, i) => {
+                        item.classList.remove("active");
+                        item.style.display = i === index ? "block" : "none";
+                    });
 
-            function nextSlide() {
-                currentIndex = (currentIndex + 1) % totalItems;
+                    indicators.forEach((indicator, i) => {
+                        indicator.classList.remove("active");
+                        if (i === index) {
+                            indicator.classList.add("active");
+                        }
+                    });
+                }
+
+                function nextSlide() {
+                    currentIndex = (currentIndex + 1) % totalItems;
+                    showSlide(currentIndex);
+                }
+
+                function prevSlide() {
+                    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+                    showSlide(currentIndex);
+                }
+
+                function startAutoSlide() {
+                    autoSlide = setInterval(nextSlide, 3000); // Défilement toutes les 3 secondes
+                }
+
+                function stopAutoSlide() {
+                    clearInterval(autoSlide);
+                }
+
+                if (nextBtn && prevBtn) {
+                    nextBtn.addEventListener("click", () => {
+                        stopAutoSlide();
+                        nextSlide();
+                        startAutoSlide();
+                    });
+
+                    prevBtn.addEventListener("click", () => {
+                        stopAutoSlide();
+                        prevSlide();
+                        startAutoSlide();
+                    });
+                }
+
+                // Démarrer l'auto-défilement au chargement
                 showSlide(currentIndex);
-            }
-
-            function prevSlide() {
-                currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-                showSlide(currentIndex);
-            }
-
-            function startAutoSlide() {
-                autoSlide = setInterval(nextSlide, 3000); // Défilement toutes les 3 secondes
-            }
-
-            function stopAutoSlide() {
-                clearInterval(autoSlide);
-            }
-
-            if (nextBtn && prevBtn) {
-                nextBtn.addEventListener("click", () => {
-                    stopAutoSlide();
-                    nextSlide();
-                    startAutoSlide();
-                });
-
-                prevBtn.addEventListener("click", () => {
-                    stopAutoSlide();
-                    prevSlide();
-                    startAutoSlide();
-                });
-            }
-
-            // Démarrer l'auto-défilement au chargement
-            showSlide(currentIndex);
-            startAutoSlide();
+                startAutoSlide();
+            });
         });
-    });
-</script>
-
+    </script>
+</section>
 </body>
 </html>
