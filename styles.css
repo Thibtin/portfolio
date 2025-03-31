@@ -529,3 +529,52 @@ h1 {
 .clickable-image:hover {
     transform: scale(1.1);
 }
+
+.social-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    height: 50px;
+    padding: 0 15px 0 15px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.social-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+    flex-shrink: 0;
+}
+
+.contact-info {
+    max-width: 0;
+    opacity: 0;
+    margin-left: 0;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.social-icon:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding-right: 20px;
+}
+
+.social-icon:hover .contact-info {
+    max-width: 200px;
+    opacity: 1;
+    margin-left: 10px;
+}
