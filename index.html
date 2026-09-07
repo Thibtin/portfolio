@@ -1,35 +1,229 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thibault Bertin — Ingénieur Vision Artificielle & Mondes Virtuels</title>
+<meta name="description" content="Portfolio de Thibault Bertin, étudiant ingénieur UTBM spécialisé en vision artificielle, systèmes autonomes et mondes virtuels — recherche de stage de fin d'études.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+
+<!-- Styles: one file per concern, loaded in cascade order -->
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/hero.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/tower.css">
+<link rel="stylesheet" href="css/modal.css">
 </head>
 <body>
-    <header>
-        <div class="titre">
-            <div class="color-dot"></div>
-            <p>Mon Portfolio</p>
-        </div>
-        <nav>
-            <ul>
-                <li><a class="active" href="index.html">Accueil</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a href="projects.html">Projets</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="acceuil">
-        <div class="acceuil-text">
-            <p>Bonjour, je suis</p>
-            <h1>Thibault BERTIN</h1>
-            <p>Etudiant en ingénieurie informatique</p>
-            <a href="projects.html" class="button"><span>Explorer mes projets</span></a>
+<canvas id="field"></canvas>
+<canvas id="scene3d"></canvas>
+<div id="vignette"></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="mark">TB</div>
+    <nav class="links">
+      <a href="#about">À propos</a>
+      <a href="#projects">Projets</a>
+      <a href="#skills">Compétences</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn-ghost" href="CV2026.pdf" download>Télécharger le CV</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="eyebrow">Ingénieur informatique · UTBM</div>
+    <h1 class="title">Thibault <span>Bertin</span></h1>
+    <p class="subtitle">Etudiant ingénieur en dernière année à l'UTBM, spécialisé en vision artificielle, systèmes autonomes et mondes virtuels. Je recherche un stage de fin d'études pour appliquer ces compétences à des problématiques réelles.</p>
+
+    <div class="hero-meta">
+      <span><span class="dot"></span>Stage de fin d'études — 23 semaines</span>
+      <span><span class="dot"></span>Disponible février → juillet 2027</span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-tag">01</span>
+        <h2 class="section-title">À propos</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-stats reveal">
+          <div class="about-stat">
+            <div class="num">22</div>
+            <div class="lbl">ANS — NÉ LE 08/01/2004</div>
+          </div>
+          <div class="about-stat">
+            <div class="num">2027</div>
+            <div class="lbl">DIPLÔME D'INGÉNIEUR, UTBM</div>
+          </div>
+          <div class="about-stat">
+            <div class="num">B2</div>
+            <div class="lbl">ANGLAIS — CERTIFIÉ LINGUASKILL</div>
+          </div>
         </div>
-    </section>
+        <div class="about-body reveal">
+          <p>Étudiant ingénieur à l'<strong>UTBM</strong>, spécialisé en <strong>vision artificielle</strong>, <strong>systèmes autonomes</strong> et <strong>mondes virtuels</strong>. J'ai construit une première expérience concrète en vision industrielle chez Sonceboz, où j'ai livré un système de reconnaissance d'étiquettes utilisé en production quotidienne.</p>
+          <p>Je cherche un stage de fin d'études de 23 semaines pour appliquer ces compétences à des problématiques réelles. Réserviste opérationnel depuis 2024, j'ai appris à travailler avec rigueur au sein d'équipes pluridisciplinaires, sous contrainte et dans l'action.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-tag">02</span>
+        <h2 class="section-title">Projets</h2>
+      </div>
+      <p class="proj-note reveal">Découvrez les projets clés qui ont marqué mon parcours académique et personnel. Entre travaux de groupe et défis personnels, ces réalisations témoignent de ma rigueur, de mon adaptabilité et de ma passion pour mon domaine.</p>
+    </div>
+
+    <!-- Desktop: 3D tower, scroll-driven -->
+    <div class="tower-wrap" id="towerWrap">
+      <div class="tower-sticky">
+        <div class="tower-dots" id="towerDots"></div>
+        <div class="tower-stage">
+          <svg class="tower-net" id="towerNet"></svg>
+          <div class="tower" id="towerGroup"></div>
+          <div class="tower-active-overlay" id="towerActiveOverlay">
+            <div class="face">
+              <div class="thumb-row">
+                <div class="t" id="taoTitle"></div>
+                <img class="thumb" id="taoThumb" src="" alt="">
+              </div>
+              <p class="d" id="taoDesc"></p>
+              <div class="tagrow" id="taoTags"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile fallback: simple stacked cards, no 3D -->
+    <div class="wrap">
+      <div class="proj-mobile-list" id="projMobileList"></div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-tag">03</span>
+        <h2 class="section-title">Compétences</h2>
+      </div>
+
+      <div class="skills-grid reveal">
+        <div class="skill-cell">
+          <div class="skill-cat">LANGAGES</div>
+          <div class="skill-items"><span>Python</span><span>C</span><span>C++</span><span>Java</span></div>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-cat">VISION & IA</div>
+          <div class="skill-items"><span>OpenCV</span><span>VISP</span><span>ROS</span><span>OCR</span><span>Embeddings / Clustering</span></div>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-cat">MONDES VIRTUELS</div>
+          <div class="skill-items"><span>Unity</span><span>Unreal Engine</span><span>Blender</span></div>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-cat">WEB & CLOUD</div>
+          <div class="skill-items"><span>React</span><span>SQL</span><span>Git</span><span>Docker</span><span>Azure</span></div>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-cat">SOFT SKILLS</div>
+          <div class="skill-items"><span>Gestion de projet</span><span>Travail en équipe</span><span>Adaptabilité</span><span>Rigueur</span><span>Persévérance</span></div>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-cat">MÉTHODE</div>
+          <div class="skill-items"><span>Autonomie</span><span>Structuration de projet</span><span>Documentation</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="contact">
+        <div class="wrap">
+          <div class="reveal">
+            <h2>
+              Pour un stage, une mission ou<br />une question
+              <span>contactez-moi</span>.
+            </h2>
+            <p>
+              Disponible pour un stage de fin d'études de 23 semaines, de
+              février à juillet 2027. N'hésitez pas à me contacter.
+            </p>
+            <div class="contact-links">
+              <a
+                class="contact-link contact-link-email"
+                href="mailto:thibaultb04@gmail.com"
+                aria-label="Envoyer un e-mail à thibaultb04@gmail.com"
+                title="Envoyer un e-mail"
+              >
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M3 5h18v14H3z" />
+                  <path d="m3 6 9 7 9-7" />
+                </svg>
+                <span class="contact-label">thibaultb04@gmail.com</span>
+              </a>
+              <a
+                class="contact-link contact-link-linkedin"
+                href="https://www.linkedin.com/in/thibault-bertin-828653265/"
+                aria-label="Visiter le profil LinkedIn de Thibault Bertin"
+                title="Profil LinkedIn"
+              >
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <rect x="4" y="4" width="16" height="16" rx="2" />
+                  <path d="M8 10v6" />
+                  <path d="M8 8v.01" />
+                  <path d="M12 16v-3.25a2.75 2.75 0 0 1 5.5 0V16" />
+                  <path d="M12 10v6" />
+                </svg>
+                <span class="contact-label">Profil LinkedIn</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+<footer>THIBAULT BERTIN — PORTFOLIO 2026</footer>
+
+<!-- Scripts: data first, then independent widgets, then the tower which needs PROJECTS -->
+<script src="js/data.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/reveal.js"></script>
+<script src="js/field.js"></script>
+<script src="js/tower.js"></script>
+<script type="module" src="js/hero-scene.js"></script>
+
 </body>
 </html>

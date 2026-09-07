@@ -1,0 +1,132 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0px 120px;
+  z-index: 1;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  letter-spacing: 0.06em;
+  color: var(--text-faint);
+  margin-bottom: 18px;
+  opacity: 0;
+  animation: rise 0.7s ease forwards;
+  animation-delay: 0.3s;
+  text-shadow: 0 0 20px rgba(8, 11, 16, 0.9);
+}
+
+h1.title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(42px, 8vw, 92px);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  clip-path: inset(0 100% 0 0);
+  animation: wipe 1s cubic-bezier(0.65, 0, 0.15, 1) forwards;
+  animation-delay: 0.5s;
+}
+@keyframes wipe {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+h1.title span {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--text-muted);
+  font-size: clamp(15px, 2vw, 19px);
+  max-width: 620px;
+  opacity: 0;
+  animation: rise 0.7s ease forwards;
+  animation-delay: 0.9s;
+}
+
+.hero-meta {
+  margin-top: 30px;
+  display: flex;
+  gap: 26px;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: var(--font-mono);
+  color: var(--text-faint);
+  opacity: 0;
+  animation: rise 0.7s ease forwards;
+  animation-delay: 1.1s;
+}
+.hero-meta span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cyan);
+  display: inline-block;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scrollcue {
+  position: absolute;
+  bottom: 38px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  animation: rise 0.7s ease forwards;
+  animation-delay: 1.4s;
+}
+.scrollcue .line {
+  width: 1px;
+  height: 46px;
+  background: linear-gradient(var(--text-faint), transparent);
+  position: relative;
+  overflow: hidden;
+}
+.scrollcue .line::after {
+  content: "";
+  position: absolute;
+  top: -46px;
+  left: 0;
+  width: 100%;
+  height: 46px;
+  background: linear-gradient(var(--cyan), transparent);
+  animation: scandown 2.2s ease-in-out infinite;
+}
+@keyframes scandown {
+  to {
+    top: 46px;
+  }
+}
+.scrollcue small {
+  font-family: var(--font-mono);
+  color: var(--text-faint);
+  letter-spacing: 0.08em;
+}

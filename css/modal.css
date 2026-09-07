@@ -1,0 +1,196 @@
+/* ---------- project detail modal ---------- */
+.proj-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(4, 6, 10, 0.82);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.proj-modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.proj-modal {
+  position: relative;
+  width: min(760px, 100%);
+  max-height: min(86vh, 900px);
+  overflow-y: auto;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 40px;
+  transform: translateY(16px) scale(0.98);
+  transition:
+    transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.25s ease;
+  opacity: 0;
+}
+.proj-modal-overlay.open .proj-modal {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+@media (max-width: 640px) {
+  .proj-modal {
+    padding: 26px 20px;
+  }
+}
+
+.proj-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+.proj-modal-close:hover {
+  color: var(--cyan);
+  border-color: var(--cyan);
+  transform: rotate(90deg);
+}
+
+.proj-modal-idx {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-faint);
+  margin-bottom: 14px;
+}
+.proj-modal-title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  padding-right: 40px;
+}
+.proj-modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+.proj-modal-tags .tag {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--cyan);
+  border: 1px solid rgba(94, 234, 212, 0.35);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+.proj-modal-desc {
+  color: var(--text-muted);
+  font-size: 15.5px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+/* mini carousel */
+.proj-modal-carousel {
+  border-top: 1px solid var(--line-soft);
+  padding-top: 24px;
+}
+.proj-modal-carousel-viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #05070b;
+  border: 1px solid var(--line-soft);
+}
+.proj-modal-carousel-viewport img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  cursor: zoom-in;
+}
+.proj-modal-carousel-viewport img.active {
+  opacity: 1;
+}
+.proj-modal-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: rgba(8, 11, 16, 0.65);
+  color: var(--text);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+  z-index: 2;
+}
+.proj-modal-carousel-btn:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+.proj-modal-carousel-btn.prev {
+  left: 10px;
+}
+.proj-modal-carousel-btn.next {
+  right: 10px;
+}
+.proj-modal-carousel-caption {
+  margin-top: 12px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--text-faint);
+  text-align: center;
+}
+.proj-modal-carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 14px;
+}
+.proj-modal-carousel-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+.proj-modal-carousel-dots span.active {
+  background: var(--cyan);
+  border-color: var(--cyan);
+}
+
+/* clickable cards affordance */
+.tower-card .face,
+.proj-card-m {
+  cursor: pointer;
+}

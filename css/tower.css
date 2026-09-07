@@ -1,0 +1,274 @@
+.proj-note {
+  font-family: var(--font-mono);
+  color: var(--text-faint);
+  margin: -40px 0 30px;
+  max-width: 560px;
+}
+
+/* -- 3D tower (desktop) -- */
+.tower-wrap {
+  position: relative;
+  height: 600vh;
+}
+.tower-sticky {
+  position: relative;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tower-dots {
+  position: absolute;
+  top: 46px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  gap: 10px;
+  visibility: hidden;
+}
+.tower-dots .dot2 {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+.tower-dots .dot2.active {
+  background: var(--cyan);
+  border-color: var(--cyan);
+  transform: scale(1.3);
+}
+
+.tower-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  perspective: 20000px;
+  perspective-origin: 50% 50%;
+}
+
+/* neural network overlay (SVG, tracks live card/anchor positions each frame) */
+.tower-net {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible;
+}
+.tower-net .link {
+  fill: none;
+  stroke: url(#netGrad);
+  stroke-width: 1.1;
+  stroke-dasharray: 3 9;
+  animation: netflow 1.6s linear infinite;
+}
+.tower-net .link.mesh {
+  stroke: var(--cyan);
+  stroke-width: 0.85;
+  stroke-dasharray: 1 6;
+  animation: netflow 3s linear infinite;
+}
+.tower-net .amb {
+  stroke: var(--violet);
+  stroke-width: 0.55;
+}
+.tower-net .ambnode {
+  fill: var(--cyan);
+}
+.tower-net .relay {
+  transition: opacity 0.15s linear;
+}
+.tower-net .node {
+  transition:
+    r 0.2s ease,
+    opacity 0.15s linear;
+}
+@keyframes netflow {
+  to {
+    stroke-dashoffset: -120;
+  }
+}
+
+/* the rotating 3D group and its cards */
+.tower {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  z-index: 2;
+  transform-style: preserve-3d;
+}
+.tower-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 280px;
+  margin: -140px 0 0 -150px;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.tower-anchor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+}
+.tower-card .face {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 4px;
+  padding: 26px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  display: flex;
+  flex-direction: column;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.thumb-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.thumb {
+  width: 60px;
+  height: 60px;
+  flex: 0 0 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--surface-strong);
+}
+.tower-card .t {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.28;
+}
+.tower-card .d {
+  color: var(--text-muted);
+  font-size: 13.5px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.tower-card .tagrow {
+  margin-top: auto;
+}
+.tower-card.active .face {
+  border-color: rgba(94, 234, 212, 0.6);
+  box-shadow: 0 0 50px -8px rgba(94, 234, 212, 0.4);
+}
+.tower-card.text-hidden .face > * {
+  opacity: 0;
+}
+
+/* flat 2D overlay: renders the active card's text completely outside the
+   preserve-3d tree so it is always pixel-crisp, positioned every frame to
+   sit exactly over the (unrotated, front-facing) active 3D card */
+.tower-active-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s linear;
+}
+.tower-active-overlay.visible {
+  opacity: 1;
+}
+.tower-active-overlay .face {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(94, 234, 212, 0.6);
+  background: var(--surface);
+  box-shadow: 0 0 50px -8px rgba(94, 234, 212, 0.4);
+  border-radius: 4px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.tower-active-overlay .t {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.28;
+}
+.tower-active-overlay .d {
+  color: var(--text-muted);
+  font-size: 13.5px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.tower-active-overlay .tagrow {
+  margin-top: auto;
+}
+
+@media (max-width: 1100px) {
+  .tower-wrap {
+    display: none;
+  }
+  .tower-hint {
+    display: none;
+  }
+}
+
+/* -- mobile fallback list (no 3D) -- */
+.proj-mobile-list {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+}
+@media (max-width: 1100px) {
+  .proj-mobile-list {
+    display: flex;
+  }
+}
+.proj-card-m {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: 26px;
+  border-radius: 3px;
+}
+.proj-card-m h3 {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 600;
+}
+.proj-card-m .thumb-row {
+  margin-bottom: 12px;
+}
+.proj-card-m p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
